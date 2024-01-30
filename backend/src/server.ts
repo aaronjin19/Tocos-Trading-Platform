@@ -6,6 +6,8 @@ import httpStatus from "http-status";
 import connectMongo from "./database";
 import requestLogger from "./utils/middleware";
 import { TransactionRouter, UserRouter } from "./routers";
+import { info } from "./utils/logger";
+
 dotenv.config();
 
 const app = express();
@@ -25,7 +27,7 @@ app
 const PORT = process.env.PORT || 8000;
 
 export const server = app.listen(PORT, () =>
-  console.log(`Server started on port ${PORT}`)
+  info(`Server started on port ${PORT}`)
 );
 
 export default app;
