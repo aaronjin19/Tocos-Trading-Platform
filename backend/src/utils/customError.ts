@@ -1,4 +1,4 @@
-export class CustomeError extends Error {
+export class CustomError extends Error {
   public status:number;
   constructor(message: any, status: number) {
     super(message);
