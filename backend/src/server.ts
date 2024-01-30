@@ -5,6 +5,7 @@ import httpStatus from "http-status";
 
 import connectMongo from "./database";
 import requestLogger from "./utils/middleware";
+import { TransactionRouter, UserRouter } from "../routers";
 dotenv.config();
 
 const app = express();
@@ -17,7 +18,9 @@ app
   .use(requestLogger)
   .use("/health", (_res, res) =>
     res.status(httpStatus.OK).send("Tocos Backend run successfully.")
-  );
+  )
+  .use("/user", UserRouter)
+  .use("/transaction",TransactionRouter);
 
 const PORT = process.env.PORT || 8000;
 
