@@ -21,7 +21,7 @@ services:
     environment:
       NODE_ENV: test
       PORT: 8000
-      MONGO_URI: mongodb://mongo:27017/tocos  # MongoDB connection URI
+      MONGO_PRODUCTION_URI: mongodb://mongo:27017/tocos  # MongoDB connection URI
       MONGO_TEST_URI: mongodb://mongo:27017/test_tocos  # MongoDB test connection URI
     depends_on:
       - mongo  # Ensure that the backend app starts after the MongoDB service
