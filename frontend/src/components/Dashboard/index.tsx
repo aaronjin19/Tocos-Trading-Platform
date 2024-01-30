@@ -43,7 +43,7 @@ export const DashboardComponent: React.FC<DashboardComponentProps> = ({
               <td className="p-2">{index + 1}</td>
               <td className="p-2">{item.name}</td>
               <td className="p-2">{item.token}</td>
-              <td className="p-2 text-black underline">
+              <td className="p-2 underline">
                 <Link to={`/user/${item._id}`}>Detail View</Link>
               </td>
             </tr>

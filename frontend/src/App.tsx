@@ -6,7 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import { store } from "./store";
 import { PATH } from "./consts";
-import { DashboardPage } from "./pages";
+import { DashboardPage, GetOneUserPage } from "./pages";
 
 function App() {
   return (
@@ -15,6 +15,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path={PATH.DASHBOARD} element={<DashboardPage />} />
+          <Route path={PATH.GET_ONE_USER} element={<GetOneUserPage />} />
         </Routes>
       </BrowserRouter>
     </Provider>
