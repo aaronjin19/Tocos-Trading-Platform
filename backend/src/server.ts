@@ -22,7 +22,7 @@ app
     res.status(httpStatus.OK).send("Tocos Backend run successfully.")
   )
   .use("/user", UserRouter)
-  .use("/transaction",TransactionRouter);
+  .use("/transaction", TransactionRouter);
 
 const PORT = process.env.PORT || 8000;
 
