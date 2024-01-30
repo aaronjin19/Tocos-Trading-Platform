@@ -3,20 +3,25 @@ import cors from "cors";
 import dotenv from "dotenv";
 import httpStatus from "http-status";
 
+import connectMongo from "./database";
+import requestLogger from "./utils/middleware";
 dotenv.config();
 
 const app = express();
 
+connectMongo(app);
+
 app
   .use(cors())
   .use(express.json())
+  .use(requestLogger)
   .use("/health", (_res, res) =>
     res.status(httpStatus.OK).send("Tocos Backend run successfully.")
   );
 
 const PORT = process.env.PORT || 8000;
 
-export const server = app.listen(PORT, () => 
+export const server = app.listen(PORT, () =>
   console.log(`Server started on port ${PORT}`)
 );
 
