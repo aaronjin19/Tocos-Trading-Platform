@@ -5,7 +5,7 @@ import httpStatus from "http-status";
 
 import connectMongo from "./database";
 import requestLogger from "./utils/middleware";
-import { TransactionRouter, UserRouter } from "../routers";
+import { TransactionRouter, UserRouter } from "./routers";
 dotenv.config();
 
 const app = express();
