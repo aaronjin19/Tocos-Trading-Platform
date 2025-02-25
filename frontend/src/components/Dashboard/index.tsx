@@ -12,6 +12,7 @@ export const DashboardComponent: React.FC<DashboardComponentProps> = ({
   showUser,
   showTransaction,
 }) => {
+  console.log(users);
   return (
     <div className=" bg-white h-full px-10 py-5">
       <div className="mb-5 flex flex-row gap-5">
@@ -26,6 +27,14 @@ export const DashboardComponent: React.FC<DashboardComponentProps> = ({
           onClick={showTransaction}
         >
           Add Transaction
+        </button>
+        
+        {/* add myself */}
+        <button
+          className="bg-white border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white hover:border-blue-500 transition-colors px-5 py-2 font-semibold"
+          onClick={showTransaction}
+        >
+          Transaction History
         </button>
       </div>
       <table className="table w-full text-center">
